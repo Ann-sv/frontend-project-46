@@ -1,3 +1,2 @@
-//это пользователь скрипта
-import genDiff from "../index.js";
-
+// это пользователь скрипта
+import genDiff from '../index.js';

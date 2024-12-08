@@ -1,54 +1,55 @@
 import * as fs from 'node:fs';
-import path from "node:path";
+import path from 'node:path';
 import parsers from './parsers.js';
-import buildTree from "./treeBuilder.js"
+import buildTree from './treeBuilder.js';
 
-//скрипт, который экспортируется
+// скрипт, который экспортируется
 
 const getFullPath = (filepath) => path.resolve(process.cwd(), filepath);
 const extractFormat = (filepath) => path.extname(filepath).slice(1);
 const getData = (filepath) => parsers(fs.readFileSync(filepath, ('utf-8')), extractFormat(filepath));
 
-const genDiff = (filepath1, filepath2) => {
-const fullFilePath1 = getFullPath(filepath1);
-const fullFilePath2 = getFullPath(filepath2);
-
-const data1 = getData(fullFilePath1);
-const data2 = getData(fullFilePath2);
-
-const tree = buildTree(data1, data2);
-console.log(calculateDiff(tree));
-// console.log(data2);
-// console.log(tree);
-
-// format(tree, formatname);
-}
-
-export default genDiff;
-
 const calculateDiff = (tree) => {
   const result = [];
 
-  tree.forEach(item => {
-      const { key, value, value1, value2, type } = item;
+  tree.forEach((item) => {
+    const {
+      key, value, value1, value2, type,
+    } = item;
 
-      // Проверяем тип изменения и формируем строку
-      if (type === 'changed') {
-          result.push(`- ${key}: ${value1}`);
-          result.push(`+ ${key}: ${value2}`);
-      } else if (type === 'added') {
-          result.push(`+ ${key}: ${value}`);
-      } else if (type === 'deleted') {
-          result.push(`- ${key}: ${value}`);
-      } else {
-          result.push(`${key}: ${value}`);
-      }
+    // проверяем тип изменения и формируем строку
+    if (type === 'changed') {
+      result.push(`- ${key}: ${value1}`);
+      result.push(`+ ${key}: ${value2}`);
+    } else if (type === 'added') {
+      result.push(`+ ${key}: ${value}`);
+    } else if (type === 'deleted') {
+      result.push(`- ${key}: ${value}`);
+    } else {
+      result.push(`${key}: ${value}`);
+    }
   });
 
-  // Возвращаем строку с фигурными скобками и переносами строк
+  // возвращаем строку с фигурными скобками и переносами строк
   return `{\n${result.join('\n')}\n}`;
 };
 
+const genDiff = (filepath1, filepath2) => {
+  const fullFilePath1 = getFullPath(filepath1);
+  const fullFilePath2 = getFullPath(filepath2);
+
+  const data1 = getData(fullFilePath1);
+  const data2 = getData(fullFilePath2);
+
+  const tree = buildTree(data1, data2);
+  console.log(calculateDiff(tree));
+  // console.log(data2);
+  // console.log(tree);
+
+  // format(tree, formatname);
+};
+
+export default genDiff;
 
 // const genDiff = (filepath1, filepath2) => {
 //   const data1 = getData(filepath1);
@@ -63,7 +64,7 @@ const calculateDiff = (tree) => {
 // export default genDiff;
 
 // // const genDiff =(fP1, fP2) => {
-  
+
 // // }
 
 // function getFileExt(filepath) {
@@ -104,4 +105,3 @@ const calculateDiff = (tree) => {
 //     }
 //   }
 // }
-
