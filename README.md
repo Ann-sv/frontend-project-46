@@ -5,7 +5,7 @@
 [![Actions Status](https://github.com/Ann-sv/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Ann-sv/frontend-project-46/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/39ba611a503ff625a41d/maintainability)](https://codeclimate.com/github/Ann-sv/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/39ba611a503ff625a41d/test_coverage)](https://codeclimate.com/github/Ann-sv/frontend-project-46/test_coverage)
-[![hexlet-check](https://github.com/Ann-sv/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Ann-sv/frontend-project-46/actions/workflows/hexlet-check.yml)
+
 
 ### Comparing two files json
 
