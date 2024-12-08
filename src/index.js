@@ -4,7 +4,6 @@ import parsers from './parsers.js';
 import buildTree from './treeBuilder.js';
 
 // скрипт, который экспортируется
-
 const getFullPath = (filepath) => path.resolve(process.cwd(), filepath);
 const extractFormat = (filepath) => path.extname(filepath).slice(1);
 const getData = (filepath) => parsers(fs.readFileSync(filepath, ('utf-8')), extractFormat(filepath));
