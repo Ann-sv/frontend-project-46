@@ -14,5 +14,5 @@ jobs:
       # run – произвольная bash-команда
       # make say-hello выведет содержимое текущего репозитория
       # - run: make lint
-      # - run: make test
+      - run: make test
       # - run: make gendiff
