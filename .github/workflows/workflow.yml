@@ -15,7 +15,7 @@ jobs:
           node-version: 18.14.0
       - run: npm  install
       - run: make lint
-      - run: npm test
+      - run: make test
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
