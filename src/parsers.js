@@ -9,11 +9,3 @@ const parsers = {
 };
 
 export default (data, format) => parsers[format](data);
-
-// if(format === "json") {
-//    return JSON.parse(data)
-// } else if(format === "yml") {
-//     return yaml.load(data)
-// } else  if (format === "yaml") {
-//     return yaml.load(data)
-// }

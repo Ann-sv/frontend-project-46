@@ -14,3 +14,15 @@
 ### Comparing two files yaml
 
 [![asciicast](https://asciinema.org/a/cDRKhRG8Dj3IPCZowQGYCypwY.svg)](https://asciinema.org/a/cDRKhRG8Dj3IPCZowQGYCypwY)
+
+### Recursive comparison
+
+[![asciicast](https://asciinema.org/a/dLAfJEsttCiItM0BW9rNe8cgg.svg)](https://asciinema.org/a/dLAfJEsttCiItM0BW9rNe8cgg)
+
+### The flat file format
+
+[![asciicast](https://asciinema.org/a/n0fQ54026E1HkSOs4AkUIPkHC.svg)](https://asciinema.org/a/n0fQ54026E1HkSOs4AkUIPkHC)
+
+### The json file format
+
+[![asciicast](https://asciinema.org/a/cPA4AKBT565nDv2mEg4QWyUJR.svg)](https://asciinema.org/a/cPA4AKBT565nDv2mEg4QWyUJR)
