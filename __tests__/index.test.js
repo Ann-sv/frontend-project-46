@@ -1,27 +1,35 @@
 // это пользователь скрипта
+// import { fileURLToPath } from 'url';
+// import path from 'node:path';
+// import fs from 'fs';
 import genDiff from '../index.js';
 
-// const checkResult = genDiff();
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+// const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
 describe('genDiff', () => {
   const result = genDiff('__fixtures__/file1.json', '__fixtures__/file2.json');
 
-  it('должен вернуть пустую строку при отсутствии различий между файлами', () => {
+  it('result is empty string if there are no differences', () => {
     expect(result).toBeUndefined();
   });
-
-  // it('должен отображать добавленные ключи', () => {
-  //   expect(result).toContain('+ key1: value1');
-  // });
-
-  // it('должен отображать измененные значения', () => {
-  //   expect(result).toContain('- oldKey: oldValue');
-  //   expect(result).toContain('+ newKey: newValue');
-  // });
-
-  // it('должен отображать удаленные ключи', () => {
-  //   expect(result).toContain('- deletedKey: deletedValue');
-  // });
-
-  // Добавьте еще несколько тестов для проверки различных сценариев...
 });
+
+// const data = [
+//   {
+//     name: 'JSON',
+//     file1: 'file1.json',
+//     file2: 'file2.json',
+//     format: 'stylish',
+//     txt: 'stylish.text.txt',
+//   },
+// ];
+
+// data.forEach(({
+//   name, file1, file2, format, txt,
+// }) => test(`${name}`, () => {
+//   expect(
+//     genDiff(getFixturePath(file1), getFixturePath(file2), format),
+//   ).toEqual(fs.readFileSync(getFixturePath(txt), 'utf-8'));
+// }));

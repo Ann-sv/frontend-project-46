@@ -13,7 +13,7 @@ const calculateDiff = (tree) => {
 
   tree.forEach((item) => {
     const {
-      key, value, value1, value2, type,
+      key, value, value1, value2, type, children,
     } = item;
 
     // проверяем тип изменения и формируем строку
@@ -24,6 +24,8 @@ const calculateDiff = (tree) => {
       result.push(`+ ${key}: ${value}`);
     } else if (type === 'deleted') {
       result.push(`- ${key}: ${value}`);
+    } else if (type === 'nested') {
+      result.push(`${key}: ${calculateDiff(children)}`);
     } else {
       result.push(`${key}: ${value}`);
     }
