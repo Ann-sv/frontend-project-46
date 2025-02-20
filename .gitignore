@@ -3,3 +3,4 @@ test.js
 /coverage/
 /.vscode/
 demo.cast
+package-lock.json
